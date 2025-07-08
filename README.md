@@ -2,7 +2,7 @@
 Welcome to my project on dynamic parking price optimization! This repository contains a Google Colab notebook where I explore different strategies to set parking prices. The main goal is to understand how various factors can influence pricing to help a parking lot operate more efficiently and potentially boost revenue.
 
 # What's the Project?
-I've developed and compared three distinct ways to calculate parking prices:
+I've developed and compared three distinct ways to calculate parking prices: 
 
 Model 1: The Simple Occupancy-Based Price
 This is the most straightforward approach. The price goes up when the parking lot gets fuller and comes down when it empties out. It's all about reacting to the immediate availability of spots.
