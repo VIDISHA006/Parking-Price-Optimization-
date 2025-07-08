@@ -1,106 +1,60 @@
-# Parking-Price-Optimization-
-This repository contains a Google Colab notebook demonstrating a project focused on developing and comparing different dynamic pricing strategies for a parking lot. The goal is to explore how various factors can influence parking prices to optimize operations and revenue.
+# Dynamic Parking Price Optimization Project
+Welcome to my project on dynamic parking price optimization! This repository contains a Google Colab notebook where I explore different strategies to set parking prices. The main goal is to understand how various factors can influence pricing to help a parking lot operate more efficiently and potentially boost revenue.
 
-Project Overview
-This project implements three distinct pricing models, ranging from simple rule-based approaches to a machine learning-driven prediction model. It showcases data loading, feature engineering, model development, and comprehensive visualization of pricing outputs.
+# What's the Project?
+I've developed and compared three distinct ways to calculate parking prices:
 
-Features
-Data Preprocessing: Handles raw parking data, cleans it, and extracts relevant features like time of day and day of the week.
+Model 1: The Simple Occupancy-Based Price
+This is the most straightforward approach. The price goes up when the parking lot gets fuller and comes down when it empties out. It's all about reacting to the immediate availability of spots.
 
-Three Pricing Models:
+Model 2: The Smarter Demand-Based Price
+This model takes things a step further. Besides just how full the lot is, it considers other signs of demand, like how long the queue is, traffic conditions nearby, or if it's a special event day. This helps the price react to actual demand, not just physical space.
 
-Model 1: Occupancy-Based Pricing.
+Model 3: The Machine Learning Predicted Price
+Here, I used a Linear Regression machine learning model. Instead of me setting fixed rules, the model learns from past data. It figures out the best way to combine all the different factors (occupancy, demand signs, time of day, etc.) to predict an optimal price. This can make pricing really adaptive and effective.
 
-Model 2: Demand-Based Pricing (incorporating queue length, traffic, and special events).
+You'll also find interactive graphs and a dashboard that let you see how each model's prices change over time and compare them side-by-side.
 
-Model 3: Machine Learning (Linear Regression) Predicted Pricing.
+# Key Features
+Data Preparation: Cleaning and getting the parking data ready for analysis.
 
-Model Comparison: Visualizes and compares the pricing outputs of all three models over time.
+Three Pricing Models: Each with its own logic, from basic to advanced.
 
-Interactive Dashboard: A Panel-based dashboard to interactively explore each model's pricing trends.
+Visual Comparisons: Clear graphs to show how the different models behave.
 
-Models Implemented
-Model 1 (Occupancy-Based): A straightforward model where parking price is directly proportional to the current occupancy rate of the parking lot. Higher occupancy leads to higher prices.
+Interactive Dashboard: A user-friendly interface to explore the pricing trends.
 
-Model 2 (Demand-Based): An enhanced model that considers not only occupancy but also external demand indicators such as queue length, nearby traffic conditions, and whether it's a special day. This allows for more dynamic pricing during peak demand periods.
+# Technologies Used
+Python: The main language for all the coding.
 
-Model 3 (Machine Learning Prediction): Utilizes a Linear Regression model trained on historical data to predict optimal parking prices. This model learns complex relationships between various features (occupancy, demand indicators, time, day of week) to provide nuanced price suggestions.
+Pandas: For handling and manipulating all the data.
 
-Technical Stack
-Python: The core programming language.
+Scikit-learn: My go-to library for building the machine learning model.
 
-Pandas: For data manipulation and analysis.
+Panel & Bokeh: Used to create those nice interactive charts and the dashboard.
 
-Scikit-learn: For building and training the Machine Learning model.
+# How the Notebook is Organized
+The Google Colab notebook is structured into easy-to-follow steps:
 
-Panel & Bokeh: For creating interactive data visualizations and the comparison dashboard.
+Steps 1-3: Getting everything set up and loading the data.
 
-Pathway (Initial Intent): The project initially aimed to leverage Pathway for real-time streaming data processing, but due to environmental constraints (explained below), the final implementation uses a batch processing approach.
+Steps 4-7: Defining and visualizing Model 1 and Model 2.
 
-How to Run This Project
-This project is designed to be run in Google Colab.
+Step 8: Training and using the Machine Learning Model (Model 3).
 
-Open the Notebook:
+Step 9: Comparing all three models on one graph.
 
-Go to Google Colab.
+Step 10: Creating the interactive dashboard.
 
-Click on File -> Upload notebook and select the .ipynb file from this repository.
+Step 11: A final summary of the project.
 
-Prepare the Dataset:
+# What's Next? (Future Ideas)
+This project lays a solid groundwork! Here are some ideas for how it could be expanded:
 
-Ensure the dataset.csv file is uploaded to your Colab environment (e.g., by dragging it into the Colab file browser, or mounting Google Drive if it's there). The notebook expects this file to be in the same directory.
+Live Data: Connect to actual live parking data.
 
-Run All Cells:
+Smarter AI: Try out even more advanced machine learning models.
 
-Once the notebook is open, go to Runtime -> Restart and run all.
+Real-World Impact: Simulate how these pricing changes would affect revenue or how busy the lot gets.
 
-Allow all cells to execute completely. The notebook is designed to run from top to bottom without manual intervention.
-
-View the Dashboard:
-
-The final cell (Step 10) will attempt to display the interactive dashboard directly in the Colab output.
-
-If the dashboard does not appear directly in Colab, it will be saved as an HTML file named parking_price_dashboard.html in your Colab environment.
-
-To view it: Click the "Files" icon (folder icon) on the left sidebar in Colab, locate parking_price_dashboard.html, right-click, and select "Download". You can then open this downloaded HTML file in any web browser.
-
-Important Note on Real-Time Processing
-The initial vision for this project included a fully real-time, streaming data pipeline using the Pathway framework. However, during development in the Google Colab environment, I encountered persistent and unresolvable technical issues (e.g., AttributeErrors with core Pathway streaming functions like pw.map, pw.udf_from_sklearn, and pw.debug.subscribe, as well as pw.run() blocking subsequent cell execution).
-
-To ensure the project's analytical objectives were met and the notebook remained fully executable and reproducible, the implementation for model calculations and visualizations was adapted to a batch processing approach using standard Pandas operations. While this means the data is processed when cells are run (rather than continuously streaming), the project successfully demonstrates the logic and comparative outputs of all dynamic pricing models. This adaptation ensures the entire notebook runs smoothly and showcases the complete work.
-
-Project Structure
-The Google Colab notebook is structured into logical steps:
-
-Step 1: Environment Setup (installing libraries).
-
-Step 2: Data Loading and Initial Cleaning.
-
-Step 3: Pathway Setup (initial data loading, though later adapted).
-
-Step 4: Model 1 Definition (Occupancy-Based).
-
-Step 5: Model 1 Visualization.
-
-Step 6: Model 2 Definition (Demand-Based).
-
-Step 7: Model 2 Visualization.
-
-Step 8: Model 3 (ML Model) Training and Prediction (batch mode).
-
-Step 9: Comparison of All Three Models (single plot).
-
-Step 10: Interactive Dashboard Creation (and HTML export).
-
-Step 11: Project Conclusion and Key Takeaways.
-
-Conclusion & Future Work
-This project provides a solid foundation for dynamic parking price optimization. Future enhancements could include:
-
-Real-world Data Integration: Connecting to live data sources (e.g., IoT sensors, traffic APIs).
-
-Advanced ML Models: Exploring more sophisticated machine learning algorithms for price prediction.
-
-Economic Evaluation: Simulating the impact of different pricing strategies on revenue and parking lot utilization.
-
-Competitor Analysis: Incorporating competitor pricing data as a feature for more robust models.
+Competitor Awareness: Add data about nearby parking lots to make pricing even more competitive.
